@@ -1,0 +1,38 @@
+[tool.poetry]
+name = "externalip"
+version = "0.0.1"
+description = ""
+authors = ["Marcello Salvati <byt3bl33d3r@pm.me>"]
+readme = "README.md"
+homepage = "https://github.com/byt3bl33d3r/externalip"
+repository = "https://github.com/byt3bl33d3r/externalip"
+exclude = ["tests"]
+include = ["LICENSE"]
+license = ""
+classifiers = [
+    "Environment :: Console",
+    "Programming Language :: Python :: 3",
+    "Topic :: Security",
+]
+
+packages = [
+    { include = "externalip"}
+]
+
+[tool.poetry.scripts]
+externalip = 'externalip.__main__:main'
+
+[tool.poetry.dependencies]
+python = "^3.10"
+prometheus-client = "^0.13.1"
+requests = "^2.27.1"
+
+[tool.poetry.dev-dependencies]
+pytest = "*"
+pytest-asyncio = "*"
+flake8 = "*"
+black = "*"
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
