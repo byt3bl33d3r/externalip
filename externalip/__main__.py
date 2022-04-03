@@ -17,6 +17,7 @@ log.setLevel(logging.INFO)
 log.addHandler(handler)
 
 
+PORT = os.environ.get("PORT") or 9101
 QUERY_INTERVAL = os.environ.get("INTERVAL") or 3
 REQUEST_TIME = Summary('request_processing_seconds', 'Time spent processing request')
 EXTERNAL_IP = Info('external_ip', 'External IP Address')
@@ -38,8 +39,9 @@ def get_external_ip():
 
 def main():
     interval = int(QUERY_INTERVAL)
+    port = int(PORT)
     # Start up the server to expose the metrics.
-    start_http_server(9100)
+    start_http_server(port)
     # Generate some requests.
     while True:
         get_external_ip()
