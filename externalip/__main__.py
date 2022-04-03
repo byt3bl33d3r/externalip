@@ -39,7 +39,7 @@ def get_external_ip():
 def main():
     interval = int(QUERY_INTERVAL)
     # Start up the server to expose the metrics.
-    start_http_server(8000)
+    start_http_server(9100)
     # Generate some requests.
     while True:
         get_external_ip()
