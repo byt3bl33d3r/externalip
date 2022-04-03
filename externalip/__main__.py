@@ -12,7 +12,7 @@ handler.setFormatter(
     )
 )
 
-log = logging.getLogger("externalip_prometheus")
+log = logging.getLogger("externalip")
 log.setLevel(logging.INFO)
 log.addHandler(handler)
 
